@@ -1,0 +1,25 @@
+####
+
+R Simulation
+Coin Flips
+
+####
+
+
+set.seed(1212)
+
+
+coin_flip <- function(n){
+ 
+
+  x <- sample(0:1, n, repl=T)
+  s <- cumsum(x); r <- s/(1:n)
+  plot(r, ylim=c(.2, .8), type="l")
+  lines(c(0,n), c(.5,.5))
+  round(cbind(x,s,r), 5)[1:10,]; r[n]  
+  
+   
+}
+
+coin_flip(64)
+
